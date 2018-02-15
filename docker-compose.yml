@@ -5,7 +5,4 @@ services:
     volumes:
       - .:/tests/linux/
     command:
-      - /bin/bash
-      - pwd
-      - ls -la
       - ./run.sh
