@@ -6,4 +6,4 @@ services:
       - .:/tests/linux/
     command:
       - /bin/bash
-- /tests/linux/run-tests.sh
+      - /tests/linux/run.sh
