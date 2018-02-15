@@ -5,4 +5,4 @@ services:
     volumes:
       - .:/tests/linux/
     command:
-      - ./run.sh
+      - ls
