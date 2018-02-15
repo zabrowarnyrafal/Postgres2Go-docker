@@ -1,22 +1,29 @@
-env:
-  DOCKER_COMPOSE_VERSION: 1.19.0
-
 sudo: required
+dist: trusty
 
 services:
   - docker
   
-before_install:
-  - sudo apt-get update
-  - docker-compose --version
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - docker-compose --version
-  - docker-compose pull
-  - docker-compose build
-  - docker-compose start
-  - docker ps
 install:
+  - >
+    curl -sSL "https://get.docker.com/gpg" |
+     sudo -E apt-key add -
+  - >
+    echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" |
+     sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - >
+    sudo apt-get -o Dpkg::Options::="--force-confdef" \
+     -o Dpkg::Options::="--force-confold" --assume-yes install docker-engine
+  - docker-compose version  
+  - sudo pip install docker-compose
+  - docker-compose version
+  
+before_script:
+  - docker-compose pull
+  - docker-compose up --build -d:
+  - docker ps
   - docker-compose -f docker-compose.yml run --rm linuxtests
+  
+after_script:
+  - docker-compose down
