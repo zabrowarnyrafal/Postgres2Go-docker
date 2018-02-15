@@ -6,4 +6,6 @@ services:
       - .:/tests/linux/
     command:
       - /bin/bash
-      - /tests/linux/run.sh
+      - pwd
+      - ls -la
+      - ./run.sh
