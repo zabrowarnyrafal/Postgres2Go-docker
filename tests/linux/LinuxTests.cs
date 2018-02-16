@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 using Xunit;
+using Postgres2Go;
 
 namespace LinuxTests
 {
@@ -26,7 +27,7 @@ namespace LinuxTests
     {
         private readonly PgFixture _fixture;
 
-        public when_using_as_class_fixture(PgFixture fixture)
+        public Fixture(PgFixture fixture)
         {
             _fixture = fixture;
         }
