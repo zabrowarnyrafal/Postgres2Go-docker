@@ -7,3 +7,4 @@ services:
       - .:/tests/linux/
     command:
       - ls
+      - ./tests/linux/run.sh
