@@ -12,6 +12,7 @@ install:
   
 before_script:
   - sudo chmod +x ./run_linux_tests.sh
+  - sudo chmod +x ./tests/linux/run.sh
   - docker-compose pull
   - docker-compose -f docker-compose.yml build
   - docker-compose -f docker-compose.yml up -d  
