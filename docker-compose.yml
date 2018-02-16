@@ -6,4 +6,5 @@ services:
     volumes:
       - .:/tests/linux/
     command:
+      - /bin/bash
       - echo '(Start) linuxtests docker service'
