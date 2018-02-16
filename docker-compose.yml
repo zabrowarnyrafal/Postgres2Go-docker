@@ -6,12 +6,4 @@ services:
     volumes:
       - .:/tests/linux/
     command:
-      - echo "(Start) linuxtests docker service"
-      - echo "---"
-      - ls
-      - ls ./tests/
-      - ls ./tests/linux
-      - chmod a+x ./tests/linux/run.sh
-      - ./tests/linux/run.sh
-      - echo "---"
-      - echo "(End) linuxtests docker service"
+      - echo '(Start) linuxtests docker service'
