@@ -14,7 +14,7 @@ before_script:
   - docker-compose pull
   - docker-compose -f docker-compose.yml build
   - docker-compose -f docker-compose.yml up -d
-  - chmodx +x ./run_linux_tests.sh
+  - chmodx a+x ./run_linux_tests.sh
   - docker-compose -f docker-compose.yml run linuxtests
   - docker ps
   
