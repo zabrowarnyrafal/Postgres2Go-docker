@@ -11,10 +11,10 @@ install:
   - docker-compose version
   
 before_script:
+  - sudo chmod +x ./run_linux_tests.sh
   - docker-compose pull
   - docker-compose -f docker-compose.yml build
-  - docker-compose -f docker-compose.yml up -d
-  - chmodx a+x ./run_linux_tests.sh
+  - docker-compose -f docker-compose.yml up -d  
   - docker-compose -f docker-compose.yml run linuxtests
   - docker ps
   
