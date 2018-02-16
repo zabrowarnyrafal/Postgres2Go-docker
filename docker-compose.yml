@@ -1,7 +1,7 @@
 version: '3'
 services:
   linuxtests:
-    image: microsoft/dotnet:2.0-sdk
+    image: microsoft/dotnet:2.0-sdk-stretch
     working_dir: /tests/linux
     volumes:
       - .:/tests/linux/
