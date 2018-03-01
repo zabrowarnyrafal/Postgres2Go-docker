@@ -12,6 +12,6 @@
     <PackageReference Include="xunit.runner.console" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
-    <PackageReference Include="Postgres2Go" />
+    <PackageReference Include="Postgres2Go" Version="0.3.0" />
   </ItemGroup>
 </Project>
