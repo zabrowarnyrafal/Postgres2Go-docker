@@ -13,8 +13,8 @@ install:
 before_script:
   - sudo chmod +x ./run_linux_tests.sh
   - sudo chmod +x ./tests/linux/run.sh
-  - sudo useradd -ms /bin/bash postgres
-  - sudo groupadd postgres
+  - sudo useradd -ms /bin/bash postgres || echo "Postgres user already exists."
+  - sudo groupadd postgres || echo "Postgres group already exists."
   - docker-compose pull
   - docker-compose -f docker-compose.yml build
   - docker-compose -f docker-compose.yml up -d  
